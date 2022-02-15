@@ -1,0 +1,19 @@
+{
+  "name": "movie_night_cs361_portfolio",
+  "version": "1.0.0",
+  "description": "Movie Night Web Application. CS 361 Portfolio Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jojo2049/Movie_Night_CS361_Portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jojo2049/Movie_Night_CS361_Portfolio/issues"
+  },
+  "homepage": "https://github.com/jojo2049/Movie_Night_CS361_Portfolio#readme"
+}
