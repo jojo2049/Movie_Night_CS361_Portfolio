@@ -14,3 +14,21 @@
   width: 100%;
   justify-content: center;
 }
+
+.movies {
+  display: flex;
+  width: 100%;
+  align-content: center;
+}
+
+.single {
+  border-style: dashed;
+  padding: 20px;
+}
+
+.instructions {
+  padding-top: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}

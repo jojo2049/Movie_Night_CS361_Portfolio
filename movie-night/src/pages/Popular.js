@@ -1,15 +1,14 @@
 import React from 'react'
-import { testData } from "../data";
+import { testPopularData } from "./../populardata";
 import GoBack from "../components/GoBack/GoBack";
-import GoPopular  from "../components/GoPopular/GoPopular";
-import GoTrending from "../components/GoTrending/GoTrending";
 import Stack from '@mui/material/Stack';
+import GoTrending from "../components/GoTrending/GoTrending"
 
-function Results() {
+function Popular() {
   return (
     <>
       <div className="movies">
-        {testData.map((data,key) => {
+        {testPopularData.map((data,key) => {
           return (
             <div key={key} className= "single">
               {data.original_title + " - Vote Average: " + data.vote_average + " , Vote Count: " + data.vote_count}
@@ -18,7 +17,6 @@ function Results() {
         })}
       </div>
       <Stack direction="row" spacing={2}>
-        <GoPopular/>
         <GoBack />
         <GoTrending />
       </Stack>
@@ -26,4 +24,4 @@ function Results() {
   )
 }
 
-export default Results
+export default Popular
