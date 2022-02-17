@@ -1,0 +1,13 @@
+.genres {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.genres_buttons {
+  padding-bottom: 75px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

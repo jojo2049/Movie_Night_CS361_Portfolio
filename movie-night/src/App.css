@@ -1,0 +1,16 @@
+.header_section {
+  padding-top: 100px;
+  padding-bottom: 75px;
+}
+
+.services_section{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.search_section{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}

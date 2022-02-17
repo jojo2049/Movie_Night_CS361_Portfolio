@@ -1,0 +1,13 @@
+.services {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.services_boxes {
+  padding: 10px 10px 75px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
