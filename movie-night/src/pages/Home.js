@@ -6,6 +6,7 @@ import Search from "./../components/Search/Search";
 function Home() {
   return (
     <>
+      
       <Genres />
       <div className="services_section">
       <Services />

@@ -3,6 +3,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+
 }
 
 .genres_buttons {
@@ -11,3 +12,4 @@
   display: flex;
   justify-content: center;
 }
+

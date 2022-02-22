@@ -6,15 +6,15 @@ import { Link } from 'react-router-dom';
 
 export default function OutlinedButtons() {
   return (
-    <Stack direction="row" spacing={2}>
+    <Stack direction="row" spacing={10}>
     <Link to="/popular">
-      <Button variant="outlined" >Most Popular</Button>
+      <Button variant="contained" >Most Popular</Button>
     </Link>
     <Link to="/results">
-      <Button variant="outlined" >Search by Genre/Service</Button>
+      <Button variant="contained" >Search by Genre/Service</Button>
     </Link>
     <Link to="/trending">
-      <Button variant="outlined" >Top Trending</Button>
+      <Button variant="contained" >Top Trending</Button>
     </Link>
     </Stack>
   );

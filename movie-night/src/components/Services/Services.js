@@ -4,12 +4,12 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import "./Services.css"
+import "./Services.css";
 
 export default function CheckboxLabels() {
   return (
     <FormControl>
-      <FormLabel className="services" id="checkboxes">Streaming Services</FormLabel>
+      <FormLabel className="services" id="checkboxes" sx={{fontSize: 'h4.fontSize'}}>Streaming Services</FormLabel>
         <FormGroup row className="services_boxes">
           <FormControlLabel control={<Checkbox />} value="disney +" label="Disney +" />
           <FormControlLabel control={<Checkbox />} value="netflix" label="Netflix" />
