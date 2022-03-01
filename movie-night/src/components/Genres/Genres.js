@@ -10,15 +10,16 @@ import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import Results from '../../pages/Results';
 
 
 
 export default function RadioButtonsGroup() {
   const [genre, setGenre] = useState('')
-  // const [disneyChecked, setDisney] = useState([])
-  // const [netflixChecked, setNetflix] = useState([])
-  // const [servicies, setServices] = useState([])
-  // const [servicies, setServices] = useState([])
+  const [disneyChecked, setDisney] = useState(false)
+  const [netflixChecked, setNetflix] = useState(false)
+  const [huluChecked, setHulu] = useState(false)
+  const [amazonChecked, setAmazon] = useState(false)
 
   return (
     <FormControl>
@@ -30,36 +31,56 @@ export default function RadioButtonsGroup() {
         name="radio-buttons-group"
         sx={{color: 'white'}}
       >
-        <FormControlLabel type={genre} value="action" control={<Radio sx={{color: 'white'}}/>} label="Action" />
-        <FormControlLabel value="adventure" control={<Radio sx={{color: 'white'}}/>} label="Adventure" />
-        <FormControlLabel value="animation" control={<Radio sx={{color: 'white'}}/>} label="Animation" />
-        <FormControlLabel value="comedy" control={<Radio sx={{color: 'white'}}/>} label="Comedy" />
-        <FormControlLabel value="crime" control={<Radio sx={{color: 'white'}}/>} label="Crime" />
-        <FormControlLabel value="documentary" control={<Radio sx={{color: 'white'}}/>} label="Documentary" />
-        <FormControlLabel value="drama" control={<Radio sx={{color: 'white'}}/>} label="Drama" />
-        <FormControlLabel value="family" control={<Radio sx={{color: 'white'}}/>} label="Family" />
-        <FormControlLabel value="fantasy" control={<Radio sx={{color: 'white'}}/>} label="Fantasy" />
-        <FormControlLabel value="history" control={<Radio sx={{color: 'white'}}/>} label="History" />
-        <FormControlLabel value="horror" control={<Radio sx={{color: 'white'}}/>} label="Horror" />
-        <FormControlLabel value="music" control={<Radio sx={{color: 'white'}}/>} label="Music" />
-        <FormControlLabel value="mystery" control={<Radio sx={{color: 'white'}}/>} label="Mystery" />
-        <FormControlLabel value="romance" control={<Radio sx={{color: 'white'}}/>} label="Romance" />
-        <FormControlLabel value="science fiction" control={<Radio sx={{color: 'white'}}/>} label="Science Fiction" />
-        <FormControlLabel value="thriller" control={<Radio sx={{color: 'white'}}/>} label="Thriller" />
-        <FormControlLabel value="war" control={<Radio sx={{color: 'white'}}/>} label="War" />
-        <FormControlLabel value="western" control={<Radio sx={{color: 'white'}}/>} label="Western" />
+        <FormControlLabel value="action" onChange={(e)=>{setGenre(e.target.value)}} control={<Radio sx={{color: 'white'}}/>} label="Action" />
+        <FormControlLabel  value="adventure" onChange={(e)=>{setGenre(e.target.value)}} control={<Radio sx={{color: 'white'}}/>} label="Adventure" />
+        <FormControlLabel  value="animation" onChange={(e)=>{setGenre(e.target.value)}} control={<Radio sx={{color: 'white'}}/>} label="Animation" />
+        <FormControlLabel  value="comedy" onChange={(e)=>{setGenre(e.target.value)}} control={<Radio sx={{color: 'white'}}/>} label="Comedy" />
+        <FormControlLabel  value="crime" onChange={(e)=>{setGenre(e.target.value)}} control={<Radio sx={{color: 'white'}}/>} label="Crime" />
+        <FormControlLabel  value="documentary" onChange={(e)=>{setGenre(e.target.value)}} control={<Radio sx={{color: 'white'}}/>} label="Documentary" />
+        <FormControlLabel  value="drama" onChange={(e)=>{setGenre(e.target.value)}} control={<Radio sx={{color: 'white'}}/>} label="Drama" />
+        <FormControlLabel  value="family" onChange={(e)=>{setGenre(e.target.value)}} control={<Radio sx={{color: 'white'}}/>} label="Family" />
+        <FormControlLabel  value="fantasy" onChange={(e)=>{setGenre(e.target.value)}} control={<Radio sx={{color: 'white'}}/>} label="Fantasy" />
+        <FormControlLabel  value="history" onChange={(e)=>{setGenre(e.target.value)}} control={<Radio sx={{color: 'white'}}/>} label="History" />
+        <FormControlLabel  value="horror" onChange={(e)=>{setGenre(e.target.value)}} control={<Radio sx={{color: 'white'}}/>} label="Horror" />
+        <FormControlLabel  value="music" onChange={(e)=>{setGenre(e.target.value)}} control={<Radio sx={{color: 'white'}}/>} label="Music" />
+        <FormControlLabel  value="mystery" onChange={(e)=>{setGenre(e.target.value)}} control={<Radio sx={{color: 'white'}}/>} label="Mystery" />
+        <FormControlLabel  value="romance" onChange={(e)=>{setGenre(e.target.value)}} control={<Radio sx={{color: 'white'}}/>} label="Romance" />
+        <FormControlLabel  value="science fiction" onChange={(e)=>{setGenre(e.target.value)}} control={<Radio sx={{color: 'white'}}/>} label="Science Fiction" />
+        <FormControlLabel  value="thriller"   onChange={(e)=>{setGenre(e.target.value)}} control={<Radio sx={{color: 'white'}}/>} label="Thriller" />
+        <FormControlLabel  value="war" onChange={(e)=>{setGenre(e.target.value)}} control={<Radio sx={{color: 'white'}}/>} label="War" />
+        <FormControlLabel  value="western" onChange={(e)=>{setGenre(e.target.value)}} control={<Radio sx={{color: 'white'}}/>} label="Western" />
       </RadioGroup>
 
       <FormLabel className="services" id="checkboxes" sx={{fontSize: 'h4.fontSize'}}>Streaming Services</FormLabel>
       <FormGroup row className="services_boxes">
-        <FormControlLabel control={<Checkbox />} value="disney +" label="Disney +" />
-        <FormControlLabel control={<Checkbox />} value="netflix" label="Netflix" />
-        <FormControlLabel control={<Checkbox />} value="hulu" label="Hulu" />
-        <FormControlLabel control={<Checkbox />} value="amazon prime" label="Amazon Prime" />
+        <FormControlLabel checked={disneyChecked} onChange={(e)=>{setDisney(e.target.checked)}} control={<Checkbox />} value="disney +" label="Disney +" />
+        <FormControlLabel checked={netflixChecked} onChange={(e)=>{setNetflix(e.target.checked)}} control={<Checkbox />} value="netflix" label="Netflix" />
+        <FormControlLabel checked={huluChecked} onChange={(e)=>{setHulu(e.target.checked)}} control={<Checkbox />} value="hulu" label="Hulu" />
+        <FormControlLabel checked={amazonChecked} onChange={(e)=>{setAmazon(e.target.checked)}} control={<Checkbox />} value="amazon prime" label="Amazon Prime" />
       </FormGroup>
 
       <Link to="/results">
-        <Button variant="contained" >Search by Genre/Service</Button>
+        
+        <Button variant="contained" onClick={(genre,setDisney, setAmazon, setNetflix, setHulu) => {
+          let services = []
+          if (setDisney === 'true') {
+            services.append('Disney Plus')
+          } 
+          if (setAmazon === 'true') {
+            services.append('Amazon Prime Video')
+          }
+          if (setNetflix === 'true') {
+            services.append('Netflix')
+          }
+          if (setHulu === 'true') {
+            services.append('Hulu')
+          }
+          console.log(genre)
+          console.log(services)
+          return services
+        } 
+        } >Search by Genre/Service</Button>
+      
       </Link>
 
     </FormControl>
