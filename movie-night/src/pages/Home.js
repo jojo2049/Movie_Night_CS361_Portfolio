@@ -9,7 +9,7 @@ function Home() {
       
       <Genres />
       <div className="services_section">
-      <Services />
+      {/* <Services /> */}
       </div>
       <div className="search_section">
       <Search />

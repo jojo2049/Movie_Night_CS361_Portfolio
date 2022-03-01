@@ -1,15 +1,11 @@
 import './App.css';
 import Header from "./components/Header/Header";
-import Genres from './components/Genres/Genres';
-import Services from "./components/Services/Services";
-import Search from "./components/Search/Search";
 import { Routes, Route } from 'react-router-dom';
-import Home from "./pages/Home"
+import Home from "./pages/Home";
 import Results from "./pages/Results"
 import Popular from "./pages/Popular";
-import Trending from "./pages/Trending"
-import background from "./background.jpg"
-import { style } from '@mui/system';
+import Trending from "./pages/Trending";
+
 
 function App() {
   return (
@@ -17,7 +13,7 @@ function App() {
       <div className='whole_page'>
       <Header />
       <div className="header_section"></div>
-      <div className="main_section">
+      <div className="cssjss-main_section">
         <Routes>
           <Route path="/" element={<Home />} />  
           <Route path="/results" element={<Results />} />

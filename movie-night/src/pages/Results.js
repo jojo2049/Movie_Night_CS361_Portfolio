@@ -5,7 +5,7 @@ import GoPopular  from "../components/GoPopular/GoPopular";
 import GoTrending from "../components/GoTrending/GoTrending";
 import Stack from '@mui/material/Stack';
 
-function Results() {
+function Results( { genre,services }) {
   return (
     <>
       <div className="movies">
