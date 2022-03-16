@@ -10,7 +10,7 @@ function Results( { genre,services }) {
   const [data,setData] = useState([]);
 
   const loadData = async () => {
-    const response = await fetch('/getpopular');
+    const response = await fetch('/getgenre');
     const movies = await response.json();
     setData(movies.popular_movies);
   }

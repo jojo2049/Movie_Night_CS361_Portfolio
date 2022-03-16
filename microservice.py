@@ -220,4 +220,4 @@ if __name__ == "__main__":
     if sys.argv[1] == "gettrending":
         get_top_20_trending()
     if sys.argv[1] == "getgenre":
-        get_top_20_by_genre(sys.argv[2],sys.argv[3:])
+        get_top_20_by_genre(sys.argv[2],[sys.argv[3:]])
