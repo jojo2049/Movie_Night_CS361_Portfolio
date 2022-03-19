@@ -6,9 +6,7 @@ import { Link } from 'react-router-dom';
 export default function OutlinedButtons() {
   return (
     <Link to="/popular">
-      <Button variant="outlined" onClick={e => {
-            alert(`Your name is test`);
-            }}>Most Popular</Button>
+      <Button variant="outlined">Most Popular</Button>
     </Link>
   );
 }

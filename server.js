@@ -46,8 +46,11 @@ app.get('/gettrending', (req,res) => {
   })
 })
 
-app.get('/getgenre', (req,res) => {
-  let process = spawn('python', ['microservice.py','getgenre', 'Adventure', 'Hulu', 'Netflix', 'Amazon Prime Video']);
+
+app.get('/genre/:genreName/services/:servicesName', (req,res) => {
+  const genre = req.params.genreName
+  const services = req.params.servicesName
+  let process = spawn('python', ['microservice.py','getgenre', genre, services]);
   let finalData = '';
   process.stdout.on('data', (data) => {
     finalData += data.toString()

@@ -20,6 +20,7 @@ export default function RadioButtonsGroup() {
   const [netflixChecked, setNetflix] = useState(false)
   const [huluChecked, setHulu] = useState(false)
   const [amazonChecked, setAmazon] = useState(false)
+  let searchCriteria = {genre, disneyChecked, amazonChecked, netflixChecked, huluChecked}
 
   return (
     <FormControl>
@@ -59,32 +60,8 @@ export default function RadioButtonsGroup() {
         <FormControlLabel checked={amazonChecked} onChange={(e)=>{setAmazon(e.target.checked)}} control={<Checkbox />} value="amazon prime" label="Amazon Prime" />
       </FormGroup>
 
-      <Link to="/results" state={[genre, disneyChecked, amazonChecked, netflixChecked, huluChecked]}>
-        
-        <Button variant="contained" onClick={e => {
-            alert(`${genre}, ${disneyChecked}, ${amazonChecked}, ${netflixChecked}, ${huluChecked}`);
-            }}
-        
-        // onClick={(genre, setDisney, setAmazon, setNetflix, setHulu) => {
-        //   let services = []
-        //   if (setDisney === 'true') {
-        //     services.append('Disney Plus')
-        //   } 
-        //   if (setAmazon === 'true') {
-        //     services.append('Amazon Prime Video')
-        //   }
-        //   if (setNetflix === 'true') {
-        //     services.append('Netflix')
-        //   }
-        //   if (setHulu === 'true') {
-        //     services.append('Hulu')
-        //   }
-        //   let data = [genre,services]
-        //   return data
-        // } } 
-        
-        >Search by Genre/Service</Button>
-      
+      <Link to="/results" state={searchCriteria}>
+        <Button variant="contained">Search by Genre/Service</Button>
       </Link>
 
     </FormControl>

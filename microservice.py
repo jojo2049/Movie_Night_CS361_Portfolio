@@ -1,4 +1,5 @@
 import json
+from operator import ge
 import requests
 import sys
 
@@ -104,12 +105,12 @@ def get_movie_streaming_providers(movie_id):
     if len(category_details) > 1:
         for service in category_details:
             streaming_service = service['provider_name']
-            if streaming_service == 'Disney Plus' or streaming_service == 'Netflix' or streaming_service == 'Hulu' or streaming_service == 'Amazon Prime Video': 
+            if streaming_service == 'Disney Plus' or streaming_service == 'Netflix' or streaming_service == 'Hulu' or streaming_service == 'Amazon Prime Video':
                 movie_details['streaming_service'].append(streaming_service)
     # if only on one streaming service, append service to list
     else:
         streaming_service = category_details[0]['provider_name']
-        if streaming_service == 'Disney Plus' or streaming_service == 'Netflix' or streaming_service == 'Hulu' or streaming_service == 'Amazon Prime Video': 
+        if streaming_service == 'Disney Plus' or streaming_service == 'Netflix' or streaming_service == 'Hulu' or streaming_service == 'Amazon Prime Video':
             movie_details['streaming_service'].append(streaming_service)
 
     return movie_details
@@ -173,7 +174,7 @@ def get_top_20_by_genre(genre, streaming_service):
     movie_provider_list = movie_provider_response['results']
 
     # iterate through list of movie providers and get provider_id for each of the 4 streaming providers
-    if len(streaming_service) > 1:
+    if len(streaming_service) > 0:
         for service in streaming_service:
             for movie_provider in movie_provider_list:
                 if movie_provider['provider_name'] == service:
@@ -182,14 +183,14 @@ def get_top_20_by_genre(genre, streaming_service):
                         movie_provider_ids.update({movie_provider['provider_name']: movie_provider['provider_id']})
                     elif service == 'Netflix' or service == 'Hulu' or service == 'Disney Plus':
                         movie_provider_ids.update({movie_provider['provider_name']: movie_provider['provider_id']})
-    elif len(streaming_service) == 1:
-        for movie_provider in movie_provider_list:
-            if movie_provider['provider_name'] == streaming_service:
-                # for some reason, TMDB has two options for Amazon Prime Video. The provider_id of 9 is the correct one.
-                if streaming_service == 'Amazon Prime Video' and movie_provider['provider_id'] == 9:
-                    movie_provider_ids.update({movie_provider['provider_name']: movie_provider['provider_id']})
-                elif streaming_service == 'Netflix' or streaming_service == 'Hulu' or streaming_service == 'Disney Plus':
-                    movie_provider_ids.update({movie_provider['provider_name']: movie_provider['provider_id']})
+    # elif len(streaming_service) == 1:
+    #     for movie_provider in movie_provider_list:
+    #         if movie_provider['provider_name'] == streaming_service[0]:
+    #             # for some reason, TMDB has two options for Amazon Prime Video. The provider_id of 9 is the correct one.
+    #             if streaming_service == 'Amazon' and movie_provider['provider_id'] == 9:
+    #                 movie_provider_ids.update({movie_provider['provider_name']: movie_provider['provider_id']})
+    #             elif streaming_service == 'Netflix' or streaming_service == 'Hulu' or streaming_service == 'Disney':
+    #                 movie_provider_ids.update({movie_provider['provider_name']: movie_provider['provider_id']})
     else:
         return []
 
@@ -199,10 +200,11 @@ def get_top_20_by_genre(genre, streaming_service):
         final_response = response.json()
         result_list = final_response['results']
         
-        genre_by_provider = {key: []}
+        # genre_by_provider = {key: []}
         for movie in result_list:
-            genre_by_provider[key].append(movie)
-        total_list['results'].append(genre_by_provider)
+            total_list['results'].append(movie)
+            # genre_by_provider[key].append(movie)
+        # total_list['results'].append(genre_by_provider)
         
     print(json.dumps(total_list))
 
@@ -212,7 +214,7 @@ def get_top_20_by_genre(genre, streaming_service):
 # print(get_movie_details(632727))
 # print(get_top_20_popular())
 # print(get_top_20_trending())
-# print(get_top_20_by_genre('Adventure', ['Hulu', 'Netflix', 'Amazon Prime Video']))
+# print(get_top_20_by_genre('Comedy', ['Amazon', 'Hulu', 'Netflix']))
 
 if __name__ == "__main__":
     if sys.argv[1] == "getpopular":
@@ -220,4 +222,6 @@ if __name__ == "__main__":
     if sys.argv[1] == "gettrending":
         get_top_20_trending()
     if sys.argv[1] == "getgenre":
-        get_top_20_by_genre(sys.argv[2],[sys.argv[3:]])
+        genre = sys.argv[2]
+        servicelist = sys.argv[3].split(",")
+        get_top_20_by_genre(genre,servicelist)
