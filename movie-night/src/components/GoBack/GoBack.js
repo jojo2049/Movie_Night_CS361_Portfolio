@@ -8,7 +8,7 @@ export default function OutlinedButtons() {
   
   return (
     <Link to="/">
-      <Button variant="outlined" >Go Back</Button>
+      <Button variant="contained" >Go Back</Button>
     </Link>
   );
 }

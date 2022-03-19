@@ -52,12 +52,12 @@ export default function RadioButtonsGroup() {
         <FormControlLabel type={genre}  value="Western" onChange={(e)=>{setGenre(e.target.value)}} control={<Radio sx={{color: 'white'}}/>} label="Western" />
       </RadioGroup>
 
-      <FormLabel className="services" id="checkboxes" sx={{fontSize: 'h4.fontSize'}}>Streaming Services</FormLabel>
-      <FormGroup row className="services_boxes">
-        <FormControlLabel checked={disneyChecked} onChange={(e)=>{setDisney(e.target.checked)}} control={<Checkbox />} value="disney +" label="Disney +" />
-        <FormControlLabel checked={netflixChecked} onChange={(e)=>{setNetflix(e.target.checked)}} control={<Checkbox />} value="netflix" label="Netflix" />
-        <FormControlLabel checked={huluChecked} onChange={(e)=>{setHulu(e.target.checked)}} control={<Checkbox />} value="hulu" label="Hulu" />
-        <FormControlLabel checked={amazonChecked} onChange={(e)=>{setAmazon(e.target.checked)}} control={<Checkbox />} value="amazon prime" label="Amazon Prime" />
+      <FormLabel className="services" id="checkboxes" sx={{fontSize: 'h4.fontSize', color: 'white'}}>Streaming Services</FormLabel>
+      <FormGroup row className="services_boxes" sx={{color: 'white'}}>
+        <FormControlLabel checked={disneyChecked}  onChange={(e)=>{setDisney(e.target.checked)}} control={<Checkbox sx={{color: 'white'}} />} value="disney +" label="Disney +" />
+        <FormControlLabel checked={netflixChecked} onChange={(e)=>{setNetflix(e.target.checked)}} control={<Checkbox sx={{color: 'white'}} />} value="netflix" label="Netflix" />
+        <FormControlLabel checked={huluChecked} onChange={(e)=>{setHulu(e.target.checked)}} control={<Checkbox sx={{color: 'white'}} />} value="hulu" label="Hulu" />
+        <FormControlLabel checked={amazonChecked} onChange={(e)=>{setAmazon(e.target.checked)}} control={<Checkbox sx={{color: 'white'}} />} value="amazon prime" label="Amazon Prime" />
       </FormGroup>
 
       <Link to="/results" state={searchCriteria}>

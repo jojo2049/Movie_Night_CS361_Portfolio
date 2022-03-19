@@ -1,6 +1,12 @@
 .header_section {
-  padding-top: 100px;
   padding-bottom: 75px;
+  position: absolute;
+}
+
+.main {
+  padding-top: 150px;
+  display: flex;
+  width: 100%;
 }
 
 .services_section{
@@ -9,14 +15,6 @@
   justify-content: center;
 }
 
-.whole_page{
-  background-image: url(./background.jpg);
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
 .search_section{
   display: flex;
   width: 100%;
@@ -44,4 +42,11 @@
 
 .MuiTypography-root {
   font-size: 5rem;
+}
+
+.nav {
+  padding-top: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }

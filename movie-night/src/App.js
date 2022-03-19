@@ -5,21 +5,23 @@ import Home from "./pages/Home";
 import Results from "./pages/Results"
 import Popular from "./pages/Popular";
 import Trending from "./pages/Trending";
+import { Container } from '@mui/material';
 
 
 function App() {
   return (
     <>
       <div className='whole_page'>
-      <Header />
-      <div className="header_section"></div>
-      <div className="cssjss-main_section">
-        <Routes>
-          <Route path="/" element={<Home />} />  
-          <Route path="/results" element={<Results />} />
-          <Route path="/popular" element={<Popular />} />
-          <Route path="/trending" element={<Trending />} />
-        </Routes>
+      <div className="header_section"><Header/></div>
+      <div className="main">
+        <Container>
+          <Routes>
+            <Route path="/" element={<Home />} />  
+            <Route path="/results" element={<Results />} />
+            <Route path="/popular" element={<Popular />} />
+            <Route path="/trending" element={<Trending />} />
+          </Routes>
+        </Container>
       </div>
       {/* <p className="instructions">Most Popular: Will provide the current most popular movies.</p>
       <p className="instructions">Search by Genre/Service: Will use your selections for Genres and Streaming services to provide recommendations.</p>
