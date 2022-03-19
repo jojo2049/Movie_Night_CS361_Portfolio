@@ -10,6 +10,7 @@ function Popular() {
 
   const [data,setData] = useState([]);
 
+  //REST fetch for data
   const loadData = async () => {
     const response = await fetch('/getpopular');
     const movies = await response.json();

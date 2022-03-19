@@ -9,6 +9,7 @@ import Movie from "../components/Movie/Movie"
 
 function Results() {
 
+  // destructure data and prepare data for REST fetch
   const location = useLocation();
   const {genre, disneyChecked, amazonChecked, netflixChecked, huluChecked} = location.state;
   
@@ -32,6 +33,7 @@ function Results() {
   
   const [data,setData] = useState([]);
 
+  //REST fetch for data
   const loadData = async () => {
     const response = await fetch(`/genre/${genre}/services/${services}`);
     const movies = await response.json();

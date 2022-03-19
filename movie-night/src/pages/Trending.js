@@ -8,6 +8,7 @@ function Results() {
 
   const [data,setData] = useState([]);
 
+  //REST fetch for data
   const loadData = async () => {
     const response = await fetch('/gettrending');
     const movies = await response.json();

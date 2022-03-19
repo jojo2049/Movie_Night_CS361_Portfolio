@@ -58,6 +58,7 @@ export default function RadioButtonsGroup() {
         <FormControlLabel checked={amazonChecked} onChange={(e)=>{setAmazon(e.target.checked)}} control={<Checkbox sx={{color: '#EEF0EB'}} />} value="amazon prime" label="Amazon Prime" />
       </FormGroup>
 
+      {/* State passes the data to the next page for the genre/services request */}
       <div className="button">
         <Link to="/results" state={searchCriteria}>
           <Button variant="contained">Search by Genre/Service</Button>

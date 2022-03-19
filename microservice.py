@@ -183,14 +183,6 @@ def get_top_20_by_genre(genre, streaming_service):
                         movie_provider_ids.update({movie_provider['provider_name']: movie_provider['provider_id']})
                     elif service == 'Netflix' or service == 'Hulu' or service == 'Disney Plus':
                         movie_provider_ids.update({movie_provider['provider_name']: movie_provider['provider_id']})
-    # elif len(streaming_service) == 1:
-    #     for movie_provider in movie_provider_list:
-    #         if movie_provider['provider_name'] == streaming_service[0]:
-    #             # for some reason, TMDB has two options for Amazon Prime Video. The provider_id of 9 is the correct one.
-    #             if streaming_service == 'Amazon' and movie_provider['provider_id'] == 9:
-    #                 movie_provider_ids.update({movie_provider['provider_name']: movie_provider['provider_id']})
-    #             elif streaming_service == 'Netflix' or streaming_service == 'Hulu' or streaming_service == 'Disney':
-    #                 movie_provider_ids.update({movie_provider['provider_name']: movie_provider['provider_id']})
     else:
         return []
 
@@ -207,14 +199,6 @@ def get_top_20_by_genre(genre, streaming_service):
         # total_list['results'].append(genre_by_provider)
         
     print(json.dumps(total_list))
-
-# tests
-# ----------------------------------------- #
-# print(get_movie_id('Inception'))
-# print(get_movie_details(632727))
-# print(get_top_20_popular())
-# print(get_top_20_trending())
-# print(get_top_20_by_genre('Comedy', ['Amazon', 'Hulu', 'Netflix']))
 
 if __name__ == "__main__":
     if sys.argv[1] == "getpopular":
