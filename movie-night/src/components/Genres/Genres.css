@@ -3,7 +3,6 @@
   width: 100%;
   display: flex;
   justify-content: center;
-
 }
 
 .genres_buttons {
@@ -15,4 +14,11 @@
 
 .MuiTypography-root {
   font-size: 5rem;
+}
+
+.button {
+  padding-bottom: 75px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

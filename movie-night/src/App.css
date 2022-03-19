@@ -28,16 +28,14 @@
   flex-wrap: wrap;
 }
 
-.single {
-  border-style: dashed;
-  padding: 20px;
-}
-
 .instructions {
   padding-top: 20px;
   display: flex;
   width: 100%;
   justify-content: center;
+  color: #EEF0EB;
+  text-shadow: 1px 1px #bb4430;
+  font-size: 20px;
 }
 
 .MuiTypography-root {
@@ -49,4 +47,15 @@
   display: flex;
   width: 100%;
   justify-content: center;
+}
+
+.titles {
+  padding-top: 20px;
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  color: #EEF0EB;
+  text-shadow: 2px 2px #bb4430;
 }

@@ -26,12 +26,14 @@ function Results() {
           return(
           <Movie 
             key={key}
+            id={results.id}
             poster={results.poster_path}
             title = {results.title}
             vote_average = {results.vote_average}
             vote_count = {results.vote_count}
             release = {results.release_date}
             overview = {results.overview}
+            poster_large = {results.backdrop_path}
            />)
         })}
       </div>
