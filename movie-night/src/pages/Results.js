@@ -60,7 +60,7 @@ function Results() {
            />)
         })}
       </div>
-      <Stack direction="row" spacing={2}>
+      <Stack direction="row" spacing={2} className="nav">
         <GoPopular/>
         <GoBack />
         <GoTrending />

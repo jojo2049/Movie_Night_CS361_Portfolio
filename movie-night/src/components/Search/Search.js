@@ -11,14 +11,16 @@ export default function OutlinedButtons() {
       <div className='titles'>
         <h1>Or you can view the:</h1>
       </div>
-      <Stack direction="row" spacing={10}>
-      <Link to="/popular">
-        <Button variant="contained" >Most Popular</Button>
-      </Link>
-      <Link to="/trending">
-        <Button variant="contained" >Top Trending</Button>
-      </Link>
-      </Stack>
+      <div className="button">
+        <Stack direction="row" spacing={10}>
+          <Link to="/popular">
+            <Button variant="contained" >Most Popular</Button>
+          </Link>
+          <Link to="/trending">
+            <Button variant="contained" >Top Trending</Button>
+          </Link>
+        </Stack>
+      </div>
     </>
   );
 }

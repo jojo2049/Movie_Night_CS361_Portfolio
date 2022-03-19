@@ -10,9 +10,6 @@ import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import Results from '../../pages/Results';
-import Stack from '@mui/material/Stack';
-
 
 
 export default function RadioButtonsGroup() {

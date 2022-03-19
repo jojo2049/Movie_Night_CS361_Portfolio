@@ -3,13 +3,15 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  text-shadow: 1px 1px #bb4430;
 }
 
 .genres_buttons {
-  padding-bottom: 75px;
+  padding-bottom: 25px;
   width: 100%;
   display: flex;
   justify-content: center;
+  text-shadow: 1px 1px #bb4430;
 }
 
 .MuiTypography-root {
@@ -17,8 +19,32 @@
 }
 
 .button {
-  padding-bottom: 75px;
   width: 100%;
   display: flex;
   justify-content: center;
+  padding-bottom: ;
+}
+
+.services {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-shadow: 1px 1px #bb4430;
+}
+
+.services {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-shadow: 1px 1px #bb4430;
+}
+
+.services_boxes {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-shadow: 1px 1px #bb4430;
 }
