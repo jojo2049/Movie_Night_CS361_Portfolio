@@ -4,8 +4,8 @@ Movie night is a movie recommendation web application that can provide users wit
 
 This web application was built using:
 
-React.js for front end with some materialUI componenets 
-Node.JS & Express for middeware which uses the Child process to call my partners microservice
-Partner microservice.py file which makes the API calls to TMDB.
+-React.js for front end with some materialUI componenets 
+-Node.JS & Express for middeware which uses the Child process to call my partners microservice
+-Partner's microservice.py file which makes the API calls to TMDB.
 
 
